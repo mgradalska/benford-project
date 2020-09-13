@@ -130,7 +130,11 @@ dmypy.json
 
 .idea/
 
-datasets/
-images/
+/datasets
+/images
 
 benford_backend/__pycache__
+
+benford_frontend/benford/.editorconfig
+benford_frontend/benford/.browserslistrc
+benford_frontend/benford/node_modules

@@ -1,0 +1,26 @@
+<mat-card class="tile">
+  <mat-card-title>Dataset #{{ dataset.id }}</mat-card-title>
+
+  <mat-card-subtitle [className]="dataset.distribution_match ? 'good' : 'bad'">
+    <mat-icon>
+      {{ dataset.distribution_match ? "done" : "close" }}
+    </mat-icon>
+    {{
+      dataset.distribution_match
+        ? "Satisfies Benford's law"
+        : "Doesn't satisfy Benford's law"
+    }}
+  </mat-card-subtitle>
+  <a mat-flat-button color="primary" class="element" href="{{ dataset.file }}">
+    Get dataset file
+  </a>
+  <a
+    mat-flat-button
+    color="primary"
+    class="element"
+    target="_blank"
+    href="{{ dataset.graph }}"
+  >
+    Check distribution graph
+  </a>
+</mat-card>

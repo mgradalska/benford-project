@@ -1,0 +1,9 @@
+<mat-grid-list
+  [cols]="columns"
+  (window:resize)="onResize($event)"
+  rowHeight="2:1"
+>
+  <mat-grid-tile *ngFor="let dataset of datasets">
+    <app-dataset-tile [dataset]="dataset"></app-dataset-tile>
+  </mat-grid-tile>
+</mat-grid-list>

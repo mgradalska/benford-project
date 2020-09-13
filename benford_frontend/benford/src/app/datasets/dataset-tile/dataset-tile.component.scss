@@ -1,0 +1,26 @@
+@import "~@angular/material/theming";
+
+:host {
+  width: 100%;
+  .tile {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    .element {
+      margin: 5px 0;
+    }
+    &:hover {
+      box-shadow: 0 2px 6px darkgrey;
+    }
+    .good {
+      color: green;
+    }
+    .bad {
+      color: red;
+    }
+    mat-card-subtitle {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

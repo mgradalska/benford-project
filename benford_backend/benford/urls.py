@@ -11,7 +11,7 @@ router.register(r"datasets", BenfordAnalyzerView, basename="benford analyzer")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    url(r"^", include(router.urls)),
+    url(r"api/", include(router.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

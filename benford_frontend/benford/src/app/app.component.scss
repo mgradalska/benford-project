@@ -1,0 +1,11 @@
+:host {
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .view {
+      width: 85%;
+    }
+  }
+}
