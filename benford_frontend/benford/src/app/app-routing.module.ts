@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'datasets',
-    pathMatch: 'full',
+    path: "",
+    redirectTo: "datasets",
+    pathMatch: "full",
   },
   {
-    path: 'datasets',
+    path: "datasets",
     loadChildren: () =>
-      import('./datasets/datasets.module').then(
+      import("./datasets/datasets.module").then(
         (module) => module.DatasetsModule
       ),
   },

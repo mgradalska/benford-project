@@ -1,0 +1,15 @@
+:host {
+  button {
+    float: right;
+    margin-right: 10px;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  mat-grid-list {
+    margin-top: 20px;
+  }
+}

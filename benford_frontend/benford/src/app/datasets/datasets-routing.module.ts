@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import { DatasetListComponent } from './dataset-list/dataset-list.component';
-import { DatasetDetailsComponent } from './dataset-details/dataset-details.component';
+import { DatasetListComponent } from "./dataset-list/dataset-list.component";
+import { DatasetDetailsComponent } from "./dataset-details/dataset-details.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: DatasetListComponent,
   },
   {
-    path: ':id',
+    path: ":id",
     component: DatasetDetailsComponent,
   },
 ];

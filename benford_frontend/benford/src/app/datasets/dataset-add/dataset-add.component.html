@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>File uploader</h1>
+  <input
+    type="file"
+    id="file"
+    (change)="handleFileInput($event.target.files)"
+  />
+
+  <div *ngIf="error" class="error-container">
+    <mat-icon>error</mat-icon>
+    <h4>{{ error }}</h4>
+  </div>
+  <button
+    [disabled]="!file"
+    mat-flat-button
+    color="primary"
+    (click)="submitFile()"
+  >
+    Save
+  </button>
+</div>

@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "benford"
+  "defaultProject": "benford",
+  "cli": {
+    "analytics": false
+  }
 }

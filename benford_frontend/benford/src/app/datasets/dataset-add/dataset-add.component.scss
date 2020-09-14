@@ -1,0 +1,22 @@
+:host {
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: 100px;
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .error-container {
+      display: flex;
+      color: red;
+      margin-top: 10px;
+
+      mat-icon {
+        margin-right: 10px;
+      }
+    }
+  }
+}
