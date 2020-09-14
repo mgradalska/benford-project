@@ -10,6 +10,7 @@ from .exceptions import (
     IncorrectFileStructureException,
     IncorrectDataException,
     EmptyFileException,
+    IncorrectFileException,
 )
 from .models import Dataset
 
@@ -68,4 +69,12 @@ class DatasetTestCase(TestCase):
         mock_file = SimpleUploadedFile("empty_file", bytes(file_content, "utf-8"))
         dataset = Dataset.objects.create(file=mock_file)
         with self.assertRaises(EmptyFileException):
+            dataset.calculate_benford_distribution()
+
+    @override_settings(MEDIA_ROOT=tempfile.TemporaryDirectory().name)
+    def test_analyze_failes_when_given_incorrect_file(self):
+        file_content = File(open(f"{files_path}incorrect_file.png")).read()
+        mock_file = SimpleUploadedFile("incorrect_file", bytes(file_content, "utf-8"))
+        dataset = Dataset.objects.create(file=mock_file)
+        with self.assertRaises(IncorrectFileException):
             dataset.calculate_benford_distribution()

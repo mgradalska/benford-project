@@ -6,6 +6,7 @@ from .exceptions import (
     IncorrectFileStructureException,
     IncorrectDataException,
     EmptyFileException,
+    IncorrectFileException,
 )
 from .serializers import DatasetSerializer, DetailDatasetSerializer
 from .models import Dataset
@@ -35,6 +36,7 @@ class BenfordAnalyzerView(viewsets.ModelViewSet):
             IncorrectFileStructureException,
             IncorrectDataException,
             EmptyFileException,
+            IncorrectFileException,
         ) as error:
             dataset.delete()
             return Response(str(error), status=400)

@@ -11,6 +11,7 @@ from .exceptions import (
     IncorrectFileStructureException,
     IncorrectDataException,
     EmptyFileException,
+    IncorrectFileException,
 )
 
 matplotlib.use("Agg")
@@ -56,6 +57,8 @@ class Dataset(models.Model):
             dataframe = pd.read_csv(self.file.path, sep="\t")
         except pd.errors.EmptyDataError:
             raise EmptyFileException()
+        except (UnicodeDecodeError, ValueError):
+            raise IncorrectFileException()
         if self.IDENTIFIER_COLUMN not in dataframe:
             raise IncorrectFileStructureException(self.IDENTIFIER_COLUMN)
         first_number_counts = self._calculate_first_number_appearances(dataframe)

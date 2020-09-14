@@ -13,3 +13,8 @@ class IncorrectDataException(Exception):
 class EmptyFileException(Exception):
     def __init__(self):
         super().__init__(f"The file is empty.")
+
+
+class IncorrectFileException(Exception):
+    def __init__(self):
+        super().__init__(f"Incorrect file. Only flat text files are accepted.")
