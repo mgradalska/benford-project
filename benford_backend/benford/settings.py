@@ -26,7 +26,10 @@ SECRET_KEY = "sdw-0(*#+lwhfn$ba2jut^_ms68g2@0+vp$o7b+234hewm&yk1"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "web",
+    "localhost",
+]
 
 # Application definition
 
@@ -132,4 +135,5 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
