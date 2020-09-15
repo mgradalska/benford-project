@@ -1,5 +1,3 @@
-from django.contrib import admin
-from django.urls import path
 from rest_framework import routers
 from benford_analyzer.views import BenfordAnalyzerView
 from django.conf.urls import include, url
@@ -10,7 +8,6 @@ router = routers.DefaultRouter()
 router.register(r"datasets", BenfordAnalyzerView, basename="benford analyzer")
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
     url(r"api/", include(router.urls)),
 ]
 
